@@ -1,0 +1,24 @@
+{
+  "name": "git-documentation-zh-cn",
+  "version": "1.0.0",
+  "description": "git docs translation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/LittleBreak/git-documentation-zh-CN.git"
+  },
+  "keywords": [
+    "git",
+    "documentation",
+    "zh-cn"
+  ],
+  "author": "caizongding",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LittleBreak/git-documentation-zh-CN/issues"
+  },
+  "homepage": "https://github.com/LittleBreak/git-documentation-zh-CN#readme"
+}
