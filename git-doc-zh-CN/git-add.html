@@ -427,15 +427,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="manpage">
 <div id="header">
-<h1>git-add(1) Manual Page</h1>
-<h2>NAME</h2>
+<h1>git-add(1)</h1>
+<h2>名称</h2>
 <div class="sectionbody">
-<p>git-add - Add file contents to the index</p>
+<p>git-add - 将文件内容添加至缓存区</p>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_synopsis">SYNOPSIS</h2>
+<h2 id="_synopsis">简介</h2>
 <div class="sectionbody">
 <div class="verseblock">
 <pre class="content"><em>git add</em> [--verbose | -v] [--dry-run | -n] [--force | -f] [--interactive | -i] [--patch | -p]
@@ -446,49 +446,48 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_description">DESCRIPTION</h2>
+<h2 id="_description">描述</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This command updates the index using the current content found in
-the working tree, to prepare the content staged for the next commit.
-It typically adds the current content of existing paths as a whole,
-but with some options it can also be used to add content with
-only part of the changes made to the working tree files applied, or
-remove paths that do not exist in the working tree anymore.</p>
+<p>
+该命令使用在工作目录下找到的当前内容更新索引，为下一次提交准备内容。
+它通常会把现有路径下的当前内容作为一个整体来添加，但有一些选项也可以作用到工作目录下的一部分修改来添加内容，或者删除工作目录中不存在的路径。
+</p>
 </div>
 <div class="paragraph">
-<p>The "index" holds a snapshot of the content of the working tree, and it
-is this snapshot that is taken as the contents of the next commit.  Thus
-after making any changes to the working tree, and before running
-the commit command, you must use the <code>add</code> command to add any new or
-modified files to the index.</p>
+<p>
+“索引”包含工作目录内容的快照，这个快照被作为下一个提交的内容。 
+因此，在对工作目录进行任何更改之后，在运行commit命令之前，必须使用<code>add</code>命令将新的或修改的文件添加到索引。
+</p>
 </div>
 <div class="paragraph">
-<p>This command can be performed multiple times before a commit.  It only
-adds the content of the specified file(s) at the time the add command is
-run; if you want subsequent changes included in the next commit, then
-you must run <code>git add</code> again to add the new content to the index.</p>
+<p>
+这个命令可以在提交之前执行多次。 
+它只在add命令运行的时候添加指定文件的内容; 如果您希望在下一次提交中包含后续更改，则必须再次运行<code>git add</code> 以将新内容添加到索引。
+</p>
 </div>
 <div class="paragraph">
-<p>The <code>git status</code> command can be used to obtain a summary of which
-files have changes that are staged for the next commit.</p>
+<p>
+<code>git status</code> 命令可以用来获取作为下次提交的修改文件的概要。
+</p>
 </div>
 <div class="paragraph">
-<p>The <code>git add</code> command will not add ignored files by default.  If any
-ignored files were explicitly specified on the command line, <code>git add</code>
-will fail with a list of ignored files.  Ignored files reached by
-directory recursion or filename globbing performed by Git (quote your
-globs before the shell) will be silently ignored.  The <em>git add</em> command can
-be used to add ignored files with the <code>-f</code> (force) option.</p>
+<p>
+<code>git add</code>命令默认不会添加被忽略的文件。
+ 如果在命令行上明确指定了任何被忽略的文件，那么<code>git add</code>将会失败并显示被忽略的文件列表。
+由Git执行的通过目录递归或文件名匹配达到的文件（在shell之前引用您的globs配置）将默认被忽略。
+<em>git add</em>命令可用于使用<code>-f</code>（强制）选项添加忽略的文件。
+</p>
 </div>
 <div class="paragraph">
-<p>Please see <a href="git-commit.html">git-commit</a>(1) for alternative ways to add content to a
-commit.</p>
+<p>
+请查看<a href="git-commit.html">git-commit</a>(1)命令用另一种方式去添加内容到一个提交中。
+</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_options">OPTIONS</h2>
+<h2 id="_options">选项</h2>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
@@ -504,7 +503,9 @@ modified in the working tree, a file <code>dir/file2</code> added to
 the working tree, but also a file <code>dir/file3</code> removed from
 the working tree.  Note that older versions of Git used
 to ignore removed files; use <code>--no-all</code> option if you want
-to add modified or new files but ignore removed	ones.</p>
+to add modified or new files but ignore removed	ones.
+
+</p>
 <div class="paragraph">
 <p>For more details about the &lt;pathspec&gt; syntax, see the <em>pathspec</em> entry
 in <a href="gitglossary.html">gitglossary</a>(7).</p>
